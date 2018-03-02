@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "微軟正黑體";
+}
+
+.leftNav{
+    position: fixed;
+    z-index: 2;
+}
+.navButton{
+    background-color:rgb(95, 95, 95);
+    width: 50px;
+    height:50px;
+    text-align: center;
+    border-radius: 50px;
+    list-style: none;
+    margin:10px 0;
+    margin-left:30px;
+    cursor: pointer;
+}
+.leftNav .navButton:nth-of-type(2){
+    background-image: url("images/navButton_002.png");
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    overflow: hidden;
+    cursor: text;
+}
+.leftNav .navButton:nth-of-type(2) input{
+    margin-top:12px;
+    margin-left:30px;
+    background-color:rgba(134, 134, 134, 0);
+    color:white;
+    border: 0;
+    display: none;
+}
+.navButton:hover{
+    background-color:rgba(47,47,47,0.9); 
+}
+.navButton img{
+    margin-top:10px;
+}
+.leftNavMenu {
+    background-color: rgba(47,55,62,1);
+    width:250px;
+    height:1000px;
+    position: fixed;
+    left:-250px;
+}
+.leftNavMenu ul{
+
+}
+.leftNavMenu ul li:first-of-type{
+    font-size: 20px;
+    padding-top: 15px;
+    cursor: default;
+}
+.leftNavMenu ul li:first-of-type:hover{
+    color: rgb(204,204,204);
+    background-color: rgba(47,55,62,1);
+}
+.leftNavMenu .closeBtn{
+    display: block;
+    background-color: white;
+    width:50px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    position: absolute;
+    top:5px;
+    left:180px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.leftNavMenu .closeBtn:hover{
+    background-color: rgb(200,200,200);
+}
+
+.leftNavMenu ul li{
+    list-style: none;
+    color: rgb(204,204,204);
+    padding:10px 0 10px 20px;
+    cursor: pointer;
+}
+.leftNavMenu ul li:hover{
+    background-color: rgb(102,102,102);
+    color:white;
+}
+.upTop{
+    background-color: rgba(48, 48, 48, 0.788);
+    width: 70px;
+    height: 70px;
+    border-radius:70px;
+    position:fixed;
+    bottom:50px;
+    right: 50px;
+    z-index: 3;
+    display: none;
+    cursor: pointer;
+}
+.upTop div{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.header{
+    height: 1080px;
+    width: 100%;
+    position: relative;
+    background: url(images/bg.jpg) no-repeat center center scroll;
+    background-size: cover;
+    animation: fadeIn infinite 1.5s;
+    animation-iteration-count : 1;
+}
+@keyframes fadeIn{
+    0%{opacity: .1}
+    100%{opacity: 1}
+}
+.headerBG{
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.logo{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.logo a{
+    text-decoration: none;
+    display: block;
+    color: white;
+    text-shadow: rgba(47,47,47,0.5) 0 5px 2px;
+}
+.logo a:last-of-type{
+    margin-top:50px;
+}
+.logo a p{
+    font-size: 20px;
+}
+.midNav{
+    background-color: sienna;
+    opacity: 0;
+}
+.midNav ul{
+    width: 100%;
+}
+.midNav li{
+    float: left;
+    list-style:none;
+    opacity: 0;
+}
+.midNav li a{
+    display: block;
+    color: white;
+    text-decoration:none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    margin:20px 10px 10px 10px;
+    
+}
+.content{
+    opacity: 0;
+    padding: 10px 20px;
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    top:-50px;
+}
+
+.content-text{
+    font-size: 20px;
+}
+.content-text img{
+    margin-right: 10px;
+}
+.news-one{
+
+}
+
+.news-two{
+    
+}
+.news-three{
+    margin-bottom: 20px;
+    
+}   
+.news-three-img {
+    height: 165px;
+    padding: 10px;
+    border: 1px dashed black;
+    overflow: hidden;
+}
+.news-three-img img{
+    width: 100%;
+    height: auto;
+    transform:scale(1);
+    transition: 2s;
+}
+.news-three-img img:hover{
+    transform: scale(1.2);
+}
+.news-text{
+    color:black;
+    
+}
+.news-two a{
+    text-decoration:none;
+}
+.footer{
+    background-color: sienna;
+}
+.footer ul {
+    overflow: hidden;
+    margin-top: 10px;
+}
+.footer p{
+    color: white;
+    margin-top:20px;
+    padding-left: 80px;
+    font-size: 15px;
+}
+.footer ul li{
+    float: left;
+    list-style: none;
+}
+@media screen and (max-width:992px) {
+    .content{
+        width: 750px;
+    }
+    .news-three-img {
+        height: 260px;
+    }
+}
+@media screen and (max-width:768px){
+    .news-three-img {
+        height: auto;
+        width: 100%;
+        background-color: white;
+    }
+    .content{
+        width: 80%;
+    }
+}
