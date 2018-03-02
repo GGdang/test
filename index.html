@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--bootstrao的CSS掛載-->  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--自己的CSS掛載-->
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body>
+    
+<div class="">
+    <div id="leftNav">
+        <div class="leftNav row">
+            <ul>
+                <li class="navButton"><img src="images/navButton_001.png" alt="" width="30px"></li>
+                <li class="navButton"><input class="serch" type="text"></li>
+            </ul>
+            <left-nav-menu></left-nav-menu>
+        </div>
+    </div>
+    <div class="upTop">
+        <div>
+            <img src="images/icon/rocket_up.png" alt="" width="64px">
+        </div>
+    </div>
+    <div class="header">
+        <div class="headerBG">
+            <div class="logo">
+                <a href="#"><img src="images/Logo.png" title="XXX公司" alt=""><br><h2>XXX公司</h2></a>
+                <a href="#"><p>Start</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="midNav">
+        <mid-nav></mid-nav>
+    </div>
+    <div class="content row no-gutters">
+        <div class="col-sm-12 col-md-12">
+            <div class="content-one">  
+                <div class="content-text"><img src="images/icon/news.gif" alt="" width="32px">New 最新消息</div>
+                <content-two v-bind:prop-news="news"></ontent-two>
+            </div>
+        </div>
+    </div>
+    <div class="footer row">
+        <p class="col-lg-9">XXX公司 台北市XX區XX路X段X號X樓 &nbsp; TEL:02-xxxx-xxxx &nbsp; FAX:02-xxxx-xxxx</p>
+        <ul class="col-lg-3 col-md-12 align-self-end">
+            <li><a href="#"><img src="images/icon/facebook.png" alt="" title="facebook" width="50px"></a></li>
+            <li><a href="#"><img src="images/icon/Line.png" alt="" title="line" width="50px"></a></li>
+            <li><a href="#"><img src="images/icon/mail.png" alt="" title="e-mail" width="50px"></a></li>
+            <li><a href="#"><img src="images/icon/skype.png" alt="" title="skype" width="50px"></a></li>
+        </ul>
+    </div>
+</div>
+<template id="content-two">
+    <div class="news-one row">
+        <div class="news-two col-lg-3 col-md-6 col-sm-12" v-for="(item,num) in propNews">
+            <a href="#">
+                <div class="news-three">
+                    <div class="news-three-img">
+                        <img v-bind:src="newsImg[num]" alt="" >
+                    </div>
+                    <div class="news-text">
+                        <p>{{item.newsText1}}</p>
+                        <p>{{item.newsText2}}</p>
+                        <p>{{item.newsDate}}</p>
+                    </div>           
+                </div>
+            </a>
+        </div>
+    </div>
+</template>
+<template id="midNav">
+    <ul class="row">
+        <li v-for="item in option" class="col-xl-3 col-md-6 col-12"><a href="#">{{item.en}}<br>{{item.ch}}</a></li>
+    </ul>
+</template>
+<template id="leftNavMenu">
+    <div class="leftNavMenu">
+        <div class="closeBtn"><b>X</b></div>
+        <ul>
+            <li>網站導覽 Menu</li>
+            <li v-for="item in menu">&#963{{item}}</li>
+        </ul>
+    </div>
+</template>
+<!--jq掛載-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--bootstrao掛載-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--vue掛載-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!--firebase掛載-->
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<!--自己的JS掛載-->
+<script src="index.js"></script>
+</body>
+</html>
